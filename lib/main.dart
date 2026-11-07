@@ -2,10 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/localization/app_localization.dart';
 import 'package:healthpal_app/core/routing/app_router.dart';
+import 'package:healthpal_app/core/routing/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
@@ -25,7 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: Routes.homeScreen,
       onGenerateRoute: AppRouter.onGenerateRoute,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }
