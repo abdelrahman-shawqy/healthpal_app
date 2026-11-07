@@ -1,1 +1,4 @@
-abstract class Routes {}
+abstract class Routes {
+
+  static const String homeScreen = 'homeScreen';
+}
