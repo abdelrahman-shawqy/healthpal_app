@@ -1,17 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:healthpal_app/core/theme/app_text_styles.dart';
+import 'package:healthpal_app/core/theme/base_colors.dart';
+import 'package:healthpal_app/core/utils/size_extension.dart';
+import 'package:healthpal_app/core/widgets/app_logo.dart';
+import 'package:healthpal_app/core/widgets/custom_button.dart';
+import 'package:healthpal_app/core/widgets/custom_text_field.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-   const ResetPasswordScreen({super.key});
+class ResetPasswordScreen extends StatefulWidget {
+  const ResetPasswordScreen({super.key});
 
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold(
-       appBar: AppBar(
-         title: const Text('Reset Password'),
-       ),
-       body: const Center(
-         child: Text('Reset Password Screen'),
-       ),
-     );
-   }
- }
+  @override
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
+}
+
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        leading: const BackButton(color: AppColors.primary),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: context.w(24)),
+          child: Column(
+            children: [
+              SizedBox(height: context.h(16)),
+              const AppLogo(),
+              SizedBox(height: context.h(32)),
+              Text('Create new password', style: AppTextStyles.title),
+              const SizedBox(height: 4),
+              Text(
+                'Your new password must be different from previously used password!',
+                style: AppTextStyles.subtitle,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: context.h(24)),
+              CustomTextField(
+                controller: _passwordController,
+                hintText: 'Password',
+                icon: Icons.lock_outline,
+                isPassword: true,
+              ),
+              const SizedBox(height: 16),
+              CustomTextField(
+                controller: _confirmPasswordController,
+                hintText: 'Confirm Password',
+                icon: Icons.lock_outline,
+                isPassword: true,
+              ),
+              SizedBox(height: context.h(24)),
+              CustomButton(text: 'Reset Password', onPressed: () {}),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

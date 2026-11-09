@@ -9,6 +9,9 @@ class CustomTextField extends StatelessWidget {
   final bool isPassword;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
+  final bool readOnly;
+  final VoidCallback? onTap;
+  final Widget? suffixIcon;
 
   const CustomTextField({
     super.key,
@@ -18,6 +21,9 @@ class CustomTextField extends StatelessWidget {
     this.isPassword = false,
     this.keyboardType = TextInputType.text,
     this.validator,
+    this.readOnly = false,
+    this.onTap,
+    this.suffixIcon,
   });
 
   @override
@@ -44,7 +50,10 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: _border(AppColors.primary),
         errorBorder: _border(Colors.red),
         focusedErrorBorder: _border(Colors.red),
+        suffixIcon: suffixIcon,
       ),
+      readOnly: readOnly,
+      onTap: onTap,
     );
   }
 
