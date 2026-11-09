@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
@@ -28,10 +29,10 @@ class SuccessDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text('Congratulations!', style: AppTextStyles.title),
+            Text('auth.congratulations'.tr(), style: AppTextStyles.title),
             const SizedBox(height: 8),
             Text(
-              'Your account is ready to use. You will be redirected to the Home Page in a few seconds...',
+              'auth.account_ready'.tr(),
               style: AppTextStyles.subtitle,
               textAlign: TextAlign.center,
             ),

@@ -1,16 +1,19 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/constants/app_images.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
 
 class SocialButtonsSection extends StatelessWidget {
-  final String actionText; 
+  final String googleText;
+  final String facebookText;
   final VoidCallback? onGooglePressed;
   final VoidCallback? onFacebookPressed;
 
   const SocialButtonsSection({
     super.key,
-    required this.actionText,
+    required this.googleText,
+    required this.facebookText,
     this.onGooglePressed,
     this.onFacebookPressed,
   });
@@ -24,7 +27,7 @@ class SocialButtonsSection extends StatelessWidget {
             const Expanded(child: Divider(color: AppColors.socialBorder)),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('or', style: AppTextStyles.body),
+              child: Text('auth.or'.tr(), style: AppTextStyles.body),
             ),
             const Expanded(child: Divider(color: AppColors.socialBorder)),
           ],
@@ -32,13 +35,13 @@ class SocialButtonsSection extends StatelessWidget {
         const SizedBox(height: 16),
         _SocialButton(
           image: AppImages.google,
-          text: '$actionText with Google',
+          text: googleText,
           onPressed: onGooglePressed,
         ),
         const SizedBox(height: 12),
         _SocialButton(
           image: AppImages.facebook,
-          text: '$actionText with Facebook',
+          text: facebookText,
           onPressed: onFacebookPressed,
         ),
       ],
@@ -75,7 +78,7 @@ class _SocialButton extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: AlignmentDirectional.centerStart,
               child: Image.asset(image, width: 20, height: 20),
             ),
             Text(text, style: AppTextStyles.socialButton),

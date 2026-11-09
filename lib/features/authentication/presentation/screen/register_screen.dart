@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
@@ -39,37 +40,47 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(height: context.h(40)),
               const AppLogo(),
               SizedBox(height: context.h(32)),
-              Text('Create Account', style: AppTextStyles.title),
+              Text('auth.create_account'.tr(), style: AppTextStyles.title),
               const SizedBox(height: 4),
-              Text('We are here to help you!', style: AppTextStyles.subtitle),
+              Text(
+                'auth.create_account_subtitle'.tr(),
+                style: AppTextStyles.subtitle,
+              ),
               SizedBox(height: context.h(24)),
               CustomTextField(
                 controller: _nameController,
-                hintText: 'Your Name',
+                hintText: 'auth.your_name'.tr(),
                 icon: Icons.person_outline,
               ),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _emailController,
-                hintText: 'Your Email',
+                hintText: 'auth.your_email'.tr(),
                 icon: Icons.email_outlined,
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _passwordController,
-                hintText: 'Password',
+                hintText: 'auth.password'.tr(),
                 icon: Icons.lock_outline,
                 isPassword: true,
               ),
               SizedBox(height: context.h(24)),
-              CustomButton(text: 'Create Account', onPressed: () {}),
+              CustomButton(
+                text: 'auth.create_account'.tr(),
+                // مؤقت لحد ما نربط Firebase
+                onPressed: () => Navigator.pushNamed(context, Routes.profile),
+              ),
               SizedBox(height: context.h(24)),
-              const SocialButtonsSection(actionText: 'Continue'),
+              SocialButtonsSection(
+                googleText: 'auth.continue_with_google'.tr(),
+                facebookText: 'auth.continue_with_facebook'.tr(),
+              ),
               SizedBox(height: context.h(24)),
               AuthFooterText(
-                text: 'Do you have an account?',
-                actionText: 'Sign in',
+                text: 'auth.have_account'.tr(),
+                actionText: 'auth.sign_in_link'.tr(),
                 onTap: () =>
                     Navigator.pushReplacementNamed(context, Routes.login),
               ),

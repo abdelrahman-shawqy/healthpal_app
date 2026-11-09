@@ -17,8 +17,8 @@ class ProfileImagePicker extends StatelessWidget {
             backgroundColor: AppColors.socialBorder,
             child: Icon(Icons.person, size: 50, color: AppColors.hint),
           ),
-          Positioned(
-            right: 0,
+          PositionedDirectional(
+            end: 0,
             bottom: 0,
             child: Container(
               width: 28,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
@@ -39,22 +40,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               SizedBox(height: context.h(16)),
               const AppLogo(),
               SizedBox(height: context.h(32)),
-              Text('Forgot Password?', style: AppTextStyles.title),
+              Text('auth.forgot_password_title'.tr(), style: AppTextStyles.title),
               const SizedBox(height: 4),
               Text(
-                'Enter your Email, we will send you a verification code.',
+                'auth.forgot_password_subtitle'.tr(),
                 style: AppTextStyles.subtitle,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: context.h(24)),
               CustomTextField(
                 controller: _emailController,
-                hintText: 'Your Email',
+                hintText: 'auth.your_email'.tr(),
                 icon: Icons.email_outlined,
                 keyboardType: TextInputType.emailAddress,
               ),
               SizedBox(height: context.h(24)),
-              CustomButton(text: 'Send Code', onPressed: () {}),
+              CustomButton(text: 'auth.send_code'.tr(), onPressed: () {}),
             ],
           ),
         ),

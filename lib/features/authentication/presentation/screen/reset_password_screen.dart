@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
@@ -41,29 +42,29 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               SizedBox(height: context.h(16)),
               const AppLogo(),
               SizedBox(height: context.h(32)),
-              Text('Create new password', style: AppTextStyles.title),
+              Text('auth.new_password_title'.tr(), style: AppTextStyles.title),
               const SizedBox(height: 4),
               Text(
-                'Your new password must be different from previously used password!',
+                'auth.new_password_subtitle'.tr(),
                 style: AppTextStyles.subtitle,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: context.h(24)),
               CustomTextField(
                 controller: _passwordController,
-                hintText: 'Password',
+                hintText: 'auth.password'.tr(),
                 icon: Icons.lock_outline,
                 isPassword: true,
               ),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _confirmPasswordController,
-                hintText: 'Confirm Password',
+                hintText: 'auth.confirm_password'.tr(),
                 icon: Icons.lock_outline,
                 isPassword: true,
               ),
               SizedBox(height: context.h(24)),
-              CustomButton(text: 'Reset Password', onPressed: () {}),
+              CustomButton(text: 'auth.reset_password'.tr(), onPressed: () {}),
             ],
           ),
         ),

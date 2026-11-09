@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
@@ -47,21 +48,25 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
   Future<void> _pickGender() async {
     final gender = await showModalBottomSheet<String>(
       context: context,
-      builder: (context) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: const Text('Male'),
-              onTap: () => Navigator.pop(context, 'Male'),
-            ),
-            ListTile(
-              title: const Text('Female'),
-              onTap: () => Navigator.pop(context, 'Female'),
-            ),
-          ],
-        ),
-      ),
+      builder: (sheetContext) {
+        final male = 'auth.male'.tr();
+        final female = 'auth.female'.tr();
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: Text(male),
+                onTap: () => Navigator.pop(sheetContext, male),
+              ),
+              ListTile(
+                title: Text(female),
+                onTap: () => Navigator.pop(sheetContext, female),
+              ),
+            ],
+          ),
+        );
+      },
     );
     if (gender != null) {
       _genderController.text = gender;
@@ -91,7 +96,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
         elevation: 0,
         scrolledUnderElevation: 0,
         leading: const BackButton(color: AppColors.primary),
-        title: Text('Fill Your Profile', style: AppTextStyles.title),
+        title: Text('auth.fill_profile'.tr(), style: AppTextStyles.title),
         centerTitle: false,
         titleSpacing: 0,
       ),
@@ -105,13 +110,13 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               SizedBox(height: context.h(32)),
               CustomTextField(
                 controller: _nameController,
-                hintText: 'Full Name',
+                hintText: 'auth.full_name'.tr(),
                 icon: Icons.person_outline,
               ),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _nicknameController,
-                hintText: 'Nickname',
+                hintText: 'auth.nickname'.tr(),
                 icon: Icons.person_outline,
               ),
               const SizedBox(height: 16),
@@ -124,7 +129,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _dobController,
-                hintText: 'Date of Birth',
+                hintText: 'auth.date_of_birth'.tr(),
                 icon: Icons.calendar_today_outlined,
                 readOnly: true,
                 onTap: _pickDate,
@@ -132,7 +137,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _genderController,
-                hintText: 'Gender',
+                hintText: 'auth.gender'.tr(),
                 icon: Icons.person_outline,
                 readOnly: true,
                 onTap: _pickGender,
@@ -142,7 +147,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
                 ),
               ),
               SizedBox(height: context.h(32)),
-              CustomButton(text: 'Save', onPressed: _onSave),
+              CustomButton(text: 'auth.save'.tr(), onPressed: _onSave),
               SizedBox(height: context.h(24)),
             ],
           ),

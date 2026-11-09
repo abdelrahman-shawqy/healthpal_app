@@ -33,6 +33,8 @@ class CustomTextField extends StatelessWidget {
       obscureText: isPassword,
       keyboardType: keyboardType,
       validator: validator,
+      readOnly: readOnly,
+      onTap: onTap,
       style: AppTextStyles.hint.copyWith(color: AppColors.primary),
       decoration: InputDecoration(
         isDense: true,
@@ -42,18 +44,16 @@ class CustomTextField extends StatelessWidget {
         fillColor: AppColors.fieldBackground,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 8),
+          padding: const EdgeInsetsDirectional.only(start: 16, end: 8),
           child: Icon(icon, size: 18, color: AppColors.hint),
         ),
         prefixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
+        suffixIcon: suffixIcon,
         enabledBorder: _border(AppColors.fieldBorder),
         focusedBorder: _border(AppColors.primary),
         errorBorder: _border(Colors.red),
         focusedErrorBorder: _border(Colors.red),
-        suffixIcon: suffixIcon,
       ),
-      readOnly: readOnly,
-      onTap: onTap,
     );
   }
 

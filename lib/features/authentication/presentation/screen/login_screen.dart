@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
@@ -37,34 +38,44 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: context.h(40)),
               const AppLogo(),
               SizedBox(height: context.h(32)),
-              Text('Hi, Welcome Back!', style: AppTextStyles.title),
+              Text('auth.welcome_back'.tr(), style: AppTextStyles.title),
               const SizedBox(height: 4),
-              Text("Hope you're doing fine.", style: AppTextStyles.subtitle),
+              Text('auth.welcome_subtitle'.tr(), style: AppTextStyles.subtitle),
               SizedBox(height: context.h(24)),
               CustomTextField(
                 controller: _emailController,
-                hintText: 'Your Email',
+                hintText: 'auth.your_email'.tr(),
                 icon: Icons.email_outlined,
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: _passwordController,
-                hintText: 'Password',
+                hintText: 'auth.password'.tr(),
                 icon: Icons.lock_outline,
                 isPassword: true,
               ),
               SizedBox(height: context.h(24)),
-              CustomButton(text: 'Sign In', onPressed: () {}),
+              CustomButton(text: 'auth.sign_in'.tr(), onPressed: () {}),
               SizedBox(height: context.h(24)),
-              const SocialButtonsSection(actionText: 'Sign in'),
+              SocialButtonsSection(
+                googleText: 'auth.sign_in_with_google'.tr(),
+                facebookText: 'auth.sign_in_with_facebook'.tr(),
+              ),
               SizedBox(height: context.h(24)),
-             Text('Forgot your password?', style: AppTextStyles.link),
-
+              GestureDetector(
+                onTap: () =>
+                    Navigator.pushNamed(context, Routes.forgotPassword),
+                child: Text(
+                  'auth.forgot_password_link'.tr(),
+                  style: AppTextStyles.link,
+                  textAlign: TextAlign.center,
+                ),
+              ),
               SizedBox(height: context.h(16)),
               AuthFooterText(
-                text: "Don't have an account yet?",
-                actionText: 'Sign up',
+                text: 'auth.no_account'.tr(),
+                actionText: 'auth.sign_up'.tr(),
                 onTap: () => Navigator.pushNamed(context, Routes.register),
               ),
               SizedBox(height: context.h(24)),
