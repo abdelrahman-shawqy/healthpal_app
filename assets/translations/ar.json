@@ -1,4 +1,20 @@
 {
-  "location": "الموقع"
-
+  "location": "الموقع",
+  "location_seattle_usa": "سياتل، الولايات المتحدة",
+  "search_doctor": "ابحث عن طبيب...",
+  "looking_for_specialist_doctors": "تبحث عن أطباء متخصصين؟",
+  "schedule_appointment_with_top_doctors": "احجز موعدًا مع أفضل أطبائنا.",
+  "categories": "التصنيفات",
+  "see_all": "عرض الكل",
+  "dentistry": "طب الأسنان",
+  "cardiology": "أمراض القلب",
+  "pulmonology": "أمراض الصدر",
+  "general": "طب عام",
+  "neurology": "طب الأعصاب",
+  "gastroenterology": "الجهاز الهضمي",
+  "laboratory": "المختبر",
+  "vaccination": "التطعيمات",
+  "nearby_medical_centers": "المراكز الطبية القريبة",
+  "sunrise_health_clinic": "عيادة صن رايز الصحية",
+  "golden_cardiology_center": "مركز جولدن لأمراض القلب"
 }
