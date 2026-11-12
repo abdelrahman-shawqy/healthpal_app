@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
+import 'package:healthpal_app/core/utils/size_extension.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -35,11 +36,13 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       readOnly: readOnly,
       onTap: onTap,
-      style: AppTextStyles.hint.copyWith(color: AppColors.primary),
+      style: AppTextStyles.hint
+          .responsive(context)
+          .copyWith(color: AppColors.primary),
       decoration: InputDecoration(
         isDense: true,
         hintText: hintText,
-        hintStyle: AppTextStyles.hint,
+        hintStyle: AppTextStyles.hint.responsive(context),
         filled: true,
         fillColor: AppColors.fieldBackground,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

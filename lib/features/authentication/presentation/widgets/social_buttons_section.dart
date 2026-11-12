@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/constants/app_images.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
+import 'package:healthpal_app/core/utils/size_extension.dart';
 
 class SocialButtonsSection extends StatelessWidget {
   final String googleText;
@@ -27,7 +28,10 @@ class SocialButtonsSection extends StatelessWidget {
             const Expanded(child: Divider(color: AppColors.socialBorder)),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('auth.or'.tr(), style: AppTextStyles.body),
+              child: Text(
+                'auth.or'.tr(),
+                style: AppTextStyles.body.responsive(context),
+              ),
             ),
             const Expanded(child: Divider(color: AppColors.socialBorder)),
           ],
@@ -81,7 +85,10 @@ class _SocialButton extends StatelessWidget {
               alignment: AlignmentDirectional.centerStart,
               child: Image.asset(image, width: 20, height: 20),
             ),
-            Text(text, style: AppTextStyles.socialButton),
+            Text(
+              text,
+              style: AppTextStyles.socialButton.responsive(context),
+            ),
           ],
         ),
       ),

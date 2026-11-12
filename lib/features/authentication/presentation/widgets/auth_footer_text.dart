@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
+import 'package:healthpal_app/core/utils/size_extension.dart';
 
 class AuthFooterText extends StatelessWidget {
   final String text;
@@ -19,11 +20,11 @@ class AuthFooterText extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: '$text ',
-        style: AppTextStyles.body,
+        style: AppTextStyles.smallBody.responsive(context),
         children: [
           TextSpan(
             text: actionText,
-            style: AppTextStyles.link,
+            style: AppTextStyles.smallLink.responsive(context),
             recognizer: TapGestureRecognizer()..onTap = onTap,
           ),
         ],

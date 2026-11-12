@@ -8,7 +8,8 @@ class AppTextStyles {
     fontSize: 14,
     color: AppColors.gray500Color,
   );
-    static TextStyle title = GoogleFonts.inter(
+
+  static TextStyle title = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w600,
     height: 1.5,
@@ -51,9 +52,24 @@ class AppTextStyles {
   );
 
   static TextStyle socialButton = GoogleFonts.inter(
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 1.5,
     color: AppColors.primary,
+  );
+
+  // small texts (footer, forgot password)
+  static TextStyle smallBody = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+    color: AppColors.subtitle,
+  );
+
+  static TextStyle smallLink = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    height: 1.5,
+    color: AppColors.link,
   );
 }
