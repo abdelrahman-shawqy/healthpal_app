@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
+import 'package:healthpal_app/core/utils/app_snackbar.dart';
 import 'package:healthpal_app/core/utils/size_extension.dart';
 import 'package:healthpal_app/core/widgets/app_logo.dart';
 import 'package:healthpal_app/core/widgets/custom_button.dart';
 import 'package:healthpal_app/core/widgets/custom_text_field.dart';
-import 'package:healthpal_app/features/authentication/logic/auth_cubit.dart';
-import 'package:healthpal_app/features/authentication/logic/auth_state.dart';
+import 'package:healthpal_app/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:healthpal_app/features/authentication/presentation/cubit/auth_state.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -35,14 +36,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthResetEmailSent) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('auth.reset_email_sent'.tr())),
-          );
+          AppSnackBar.show(context, 'auth.reset_email_sent'.tr());
           Navigator.pop(context);
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.messageKey.tr())),
-          );
+          AppSnackBar.show(context, state.messageKey.tr());
         }
       },
       builder: (context, state) {

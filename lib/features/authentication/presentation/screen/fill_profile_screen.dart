@@ -6,6 +6,7 @@ import 'package:healthpal_app/core/theme/base_colors.dart';
 import 'package:healthpal_app/core/utils/size_extension.dart';
 import 'package:healthpal_app/core/widgets/custom_button.dart';
 import 'package:healthpal_app/core/widgets/custom_text_field.dart';
+import 'package:healthpal_app/features/authentication/presentation/helpers/profile_pickers.dart';
 import 'package:healthpal_app/features/authentication/presentation/widgets/profile_image_picker.dart';
 import 'package:healthpal_app/features/authentication/presentation/widgets/success_dialog.dart';
 
@@ -34,43 +35,13 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
   }
 
   Future<void> _pickDate() async {
-    final date = await showDatePicker(
-      context: context,
-      initialDate: DateTime(2000),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
-    if (date != null) {
-      _dobController.text = '${date.day}/${date.month}/${date.year}';
-    }
+    final date = await ProfilePickers.pickDate(context);
+    if (date != null) _dobController.text = date;
   }
 
   Future<void> _pickGender() async {
-    final gender = await showModalBottomSheet<String>(
-      context: context,
-      builder: (sheetContext) {
-        final male = 'auth.male'.tr();
-        final female = 'auth.female'.tr();
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTile(
-                title: Text(male),
-                onTap: () => Navigator.pop(sheetContext, male),
-              ),
-              ListTile(
-                title: Text(female),
-                onTap: () => Navigator.pop(sheetContext, female),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-    if (gender != null) {
-      _genderController.text = gender;
-    }
+    final gender = await ProfilePickers.pickGender(context);
+    if (gender != null) _genderController.text = gender;
   }
 
   Future<void> _onSave() async {

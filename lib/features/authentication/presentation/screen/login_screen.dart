@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
+import 'package:healthpal_app/core/utils/app_snackbar.dart';
 import 'package:healthpal_app/core/utils/size_extension.dart';
 import 'package:healthpal_app/core/widgets/app_logo.dart';
 import 'package:healthpal_app/core/widgets/custom_button.dart';
 import 'package:healthpal_app/core/widgets/custom_text_field.dart';
-import 'package:healthpal_app/features/authentication/logic/auth_cubit.dart';
-import 'package:healthpal_app/features/authentication/logic/auth_state.dart';
+import 'package:healthpal_app/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:healthpal_app/features/authentication/presentation/cubit/auth_state.dart';
 import 'package:healthpal_app/features/authentication/presentation/widgets/auth_footer_text.dart';
 import 'package:healthpal_app/features/authentication/presentation/widgets/social_buttons_section.dart';
 
@@ -48,9 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
             (route) => false,
           );
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.messageKey.tr())),
-          );
+          AppSnackBar.show(context, state.messageKey.tr());
         }
       },
       builder: (context, state) {
