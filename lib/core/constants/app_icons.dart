@@ -15,17 +15,16 @@ class AppIcons {
   static const String calendarIcon = 'assets/icons/calendar_icon.svg';
   static const String profileIcon = 'assets/icons/profile_icon.svg';
 
-  // ---- Placeholders: real asset paths will be provided later. ----
-  // An empty path is safe: AppSvgIcon shows an empty box instead of crashing.
-  static const String searchIcon = '';
-  static const String arrowDownIcon = '';
-  static const String heartIcon = '';
+  static const String searchIcon = 'assets/icons/search_icon.svg';
+  static const String arrowDownIcon = 'assets/icons/arrow-down.svg';
 
   // Selected versions of the bottom navigation icons (they differ from the
   // unselected ones in the design). If a path is empty, the nav bar falls
   // back to the unselected icon.
-  static const String homeSelectedIcon = '';
-  static const String locationNaveSelectedIcon = '';
-  static const String calendarSelectedIcon = '';
-  static const String profileSelectedIcon = '';
+  static const String homeSelectedIcon = 'assets/icons/home_selected.svg';
+  static const String locationNaveSelectedIcon =
+      'assets/icons/location_selected.svg';
+  static const String calendarSelectedIcon =
+      'assets/icons/calendar_selected.svg';
+  static const String profileSelectedIcon = 'assets/icons/profile_selected.svg';
 }
