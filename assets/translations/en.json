@@ -1,4 +1,20 @@
 {
-  "location":"Location"
-
+  "location": "Location",
+  "location_seattle_usa": "Seattle, USA",
+  "search_doctor": "Search doctor...",
+  "looking_for_specialist_doctors": "Looking for Specialist Doctors?",
+  "schedule_appointment_with_top_doctors": "Schedule an appointment with our top doctors.",
+  "categories": "Categories",
+  "see_all": "See All",
+  "dentistry": "Dentistry",
+  "cardiology": "Cardiology",
+  "pulmonology": "Pulmonology",
+  "general": "General",
+  "neurology": "Neurology",
+  "gastroenterology": "Gastroenterology",
+  "laboratory": "Laboratory",
+  "vaccination": "Vaccination",
+  "nearby_medical_centers": "Nearby Medical Centers",
+  "sunrise_health_clinic": "Sunrise Health Clinic",
+  "golden_cardiology_center": "Golden Cardiology Center"
 }
