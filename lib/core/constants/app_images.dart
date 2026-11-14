@@ -6,4 +6,7 @@ class AppImages {
   static const String specialistBanner3 = '';
   static const String specialistBanner4 = '';
   static const String goldenCardiologyCenter = '';
+  static const String logo = 'assets/images/logo.png';
+  static const String google = 'assets/images/Google.png';
+  static const String facebook = 'assets/images/Facebook.png';
 }

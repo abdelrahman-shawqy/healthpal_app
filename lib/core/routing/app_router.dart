@@ -1,10 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthpal_app/core/di/injection.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
+import 'package:healthpal_app/features/authentication/presentation/screen/fill_profile_screen.dart';
+import 'package:healthpal_app/features/authentication/presentation/screen/forgot_password_screen.dart';
+import 'package:healthpal_app/features/authentication/presentation/screen/login_screen.dart';
+import 'package:healthpal_app/features/authentication/presentation/screen/register_screen.dart';
+import 'package:healthpal_app/features/authentication/presentation/screen/reset_password_screen.dart';
 import 'package:healthpal_app/features/main/presentation/screens/main_screen.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      // authentication routes
+      case Routes.login:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => Injection.authCubit(),
+            child: const LoginScreen(),
+          ),
+        );
+
+      case Routes.register:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => Injection.authCubit(),
+            child: const RegisterScreen(),
+          ),
+        );
+
+      case Routes.forgotPassword:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => Injection.authCubit(),
+            child: const ForgotPasswordScreen(),
+          ),
+        );
+
+      case Routes.resetPassword:
+        return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
+
+      case Routes.profile:
+        return MaterialPageRoute(builder: (_) => const FillProfileScreen());
+      // end of authentication routes
+
       case Routes.mainScreen:
         return MaterialPageRoute(builder: (_) => const MainScreen());
       default:

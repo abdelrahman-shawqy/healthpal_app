@@ -1,0 +1,23 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "healthpal-d605f",
+          "appId": "1:388148631614:android:5dcc812c841b58d430596f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "healthpal-d605f",
+          "configurations": {
+            "android": "1:388148631614:android:5dcc812c841b58d430596f",
+            "ios": "1:388148631614:ios:079e3cd1b5efc53730596f",
+            "web": "1:388148631614:web:6feeb0a432f401e430596f"
+          }
+        }
+      }
+    }
+  }
+}
