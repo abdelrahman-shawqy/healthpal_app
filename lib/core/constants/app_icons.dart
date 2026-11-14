@@ -27,4 +27,7 @@ class AppIcons {
   static const String calendarSelectedIcon =
       'assets/icons/calendar_selected.svg';
   static const String profileSelectedIcon = 'assets/icons/profile_selected.svg';
+
+  // Logo
+  static const String logo = 'assets/icons/logo.svg';
 }

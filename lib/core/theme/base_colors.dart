@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -19,4 +17,23 @@ class AppColors {
   // Semi-transparent colors (alpha is already part of the value).
   static const Color bannerCircleOverlay = Color(0x33D9D9D9); // #D9D9D9 @ 20%
   static const Color heartBackground = Color(0x221F2A37); // #1F2A37 @ 20%
+
+  // Splash & onboarding colors
+  static const Color splashBackground = Color(0xff1C2A3A); // deep navy/purple background
+  static const Color onboardingBg1 = Color(0xffE8F3F1); // light teal/mint
+  static const Color onboardingBg2 = Color(0xffFCE4EC); // light pink
+  static const Color onboardingBg3 = Color(0xffE0F2F1); // teal
+  static const Color buttonNavy = Color(0xff1C2A3A); // dark navy for buttons
+  static const Color dotInactive = Color(0xffC4C4C4); // gray dot
+  static const Color skipGray = Color(0xff9CA3AF); // skip text
+  static const Color onboardingTitle = Color(0xff1C2A3A); // title text
+  static const Color onboardingDescription = Color(0xff6B7280); // description text
+
+  // Doctor collage tile muted backgrounds for splash
+  static const Color splashTileBlue = Color(0xffBFD3E6);
+  static const Color splashTilePink = Color(0xffF3D7D7);
+  static const Color splashTileTeal = Color(0xffC8E3DC);
+  static const Color splashTileOrange = Color(0xffF0DCCB);
+  static const Color splashTileGreen = Color(0xffCFE5D4);
+  static const Color splashTilePurple = Color(0xffD9D0E8);
 }

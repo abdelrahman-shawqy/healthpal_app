@@ -59,4 +59,41 @@ class AppTextStyles {
     fontSize: 14,
     color: AppColors.gray600,
   );
+
+  /// Onboarding page title (bold, ~22px).
+  static TextStyle get headingOnboardingTitle => GoogleFonts.inter(
+    fontWeight: FontWeight.w700,
+    fontSize: 22,
+    height: 1.4,
+    color: AppColors.onboardingTitle,
+  );
+
+  /// Onboarding page description (~14px, gray).
+  static TextStyle get textMFontNormalDescription => GoogleFonts.inter(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    height: 1.6,
+    color: AppColors.onboardingDescription,
+  );
+
+  /// Button text style (semibold, ~16px, white).
+  static TextStyle get textButtonLabel => GoogleFonts.inter(
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    color: AppColors.mainColor,
+  );
+
+  /// Skip button text style (~14px, gray).
+  static TextStyle get textSkipButton => GoogleFonts.inter(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    color: AppColors.skipGray,
+  );
+
+  /// Splash app name style (bold, ~28px, white).
+  static TextStyle get headingSplashAppName => GoogleFonts.inter(
+    fontWeight: FontWeight.w700,
+    fontSize: 28,
+    color: AppColors.mainColor,
+  );
 }
