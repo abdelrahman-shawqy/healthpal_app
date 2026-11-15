@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/constants/app_icons.dart';
 import 'package:healthpal_app/core/theme/app_text_styles.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
-import 'package:healthpal_app/core/widges/app_image.dart';
-import 'package:healthpal_app/core/widges/app_svg_icon.dart';
+import 'package:healthpal_app/core/widgets/app_image.dart';
 
 /// Medical center card: image with a heart button on top, name below.
 class MedicalCenterCard extends StatelessWidget {

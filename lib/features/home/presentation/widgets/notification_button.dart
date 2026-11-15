@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthpal_app/core/constants/app_icons.dart';
 import 'package:healthpal_app/core/theme/base_colors.dart';
-import 'package:healthpal_app/core/widges/app_svg_icon.dart';
+import 'package:healthpal_app/core/widgets/app_svg_icon.dart';
 
 class NotificationButton extends StatelessWidget {
   const NotificationButton();
