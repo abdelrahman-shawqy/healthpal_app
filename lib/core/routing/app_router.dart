@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthpal_app/core/di/injection.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
+import 'package:healthpal_app/features/authentication/presentation/cubit/auth_cubit.dart'; // جديد
 import 'package:healthpal_app/features/authentication/presentation/screen/fill_profile_screen.dart';
 import 'package:healthpal_app/features/authentication/presentation/screen/forgot_password_screen.dart';
 import 'package:healthpal_app/features/authentication/presentation/screen/login_screen.dart';
@@ -16,7 +17,7 @@ class AppRouter {
       case Routes.login:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => Injection.authCubit(),
+            create: (_) => getIt<AuthCubit>(),
             child: const LoginScreen(),
           ),
         );
@@ -24,7 +25,7 @@ class AppRouter {
       case Routes.register:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => Injection.authCubit(),
+            create: (_) => getIt<AuthCubit>(),
             child: const RegisterScreen(),
           ),
         );
@@ -32,7 +33,7 @@ class AppRouter {
       case Routes.forgotPassword:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => Injection.authCubit(),
+            create: (_) => getIt<AuthCubit>(),
             child: const ForgotPasswordScreen(),
           ),
         );
