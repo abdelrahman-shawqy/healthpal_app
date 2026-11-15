@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:healthpal_app/core/di/injection.dart';
+import 'package:healthpal_app/core/dependency%20_injection/di.dart';
 import 'package:healthpal_app/core/routing/routes.dart';
 import 'package:healthpal_app/features/authentication/presentation/screen/fill_profile_screen.dart';
 import 'package:healthpal_app/features/authentication/presentation/screen/forgot_password_screen.dart';
